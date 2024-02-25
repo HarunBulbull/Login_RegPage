@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/55d7e7143f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="ok"><a href="main.html"><i class="fa-sharp fa-solid fa-arrow-left"></i></a></div>
+    <main id="main">
+        <div class="siyah"></div>
+        <div class="container" id="con">
+            <h1 id="login">LOGIN</h1>
+            <div class="inputs" id="inp">
+                <div class="inpcon">
+                    <input class="inp" type="text" id="kadi" placeholder="">
+                    <label class="lbl" for="kadi">Username</label>
+                </div>
+                <div class="inpcon">
+                    <input class="inp" type="password" id="pass" placeholder="">
+                    <label class="lbl" for="pass">Password</label>
+                </div>
+                <input class="cb" type="checkbox" id="cb" onclick="validate()"></button>
+                <label class="lblcb" for="cb">Show password</label>
+                <button>login</button>
+                <h5 class="reg">Don't have an account? <a href="#"  onclick="reg()" class="bold">Register!</a></h5>
+            </div>
+            <h1 class="lgn "id="reg">REGISTER</h1>
+            <div class="inputreg" id="inpr">
+                <div class="inpcon">
+                    <input class="inp" type="text" id="kadi1" placeholder="">
+                    <label class="lbl" for="kadi1">Username</label>
+                </div>
+                <div class="inpcon">
+                    <input class="inp" type="text" id="mail" placeholder="">
+                    <label class="lbl" for="mail">E-mail</label>
+                </div>
+                <div class="inpcon">
+                    <input class="inp" type="password" id="pass1" placeholder="">
+                    <label class="lbl" for="pass1">Password</label>
+                </div>
+                <div class="inpcon">
+                    <input class="inp" type="password" id="pass2" placeholder="">
+                    <label class="lbl" for="pass2">Password</label>
+                </div>
+                <input class="cb" type="checkbox" id="cb2" onclick="validate()"></button>
+                <label class="lblcb" for="cb">Show password</label>
+                <button>register</button>
+                <h5 class="reg">Have an account? <a href="#"  onclick="log()" class="boldl">Log in!</a></h5>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    function validate() {
+        if (document.getElementById('cb').checked) {
+            document.getElementById('pass').type = 'text';
+        } else {
+            document.getElementById('pass').type = 'password';
+        }
+        if (document.getElementById('cb2').checked) {
+            document.getElementById('pass1').type = 'text';
+            document.getElementById('pass2').type = 'text';
+        } else {
+            document.getElementById('pass1').type = 'password';
+            document.getElementById('pass2').type = 'password';
+        }
+    }
+
+
+    function reg(){
+        document.getElementById('kadi1').value = "";
+        document.getElementById('mail').value = "";
+        document.getElementById('pass1').value = "";
+        document.getElementById('pass2').value = "";
+        document.getElementById('con').style.height = "530px";
+        document.getElementById('inp').style.opacity = 0;
+        document.getElementById('login').style.opacity = 0;
+        document.getElementById('reg').style.display = "block";
+        document.getElementById('inpr').style.display = "block";
+        setTimeout(function (){
+            document.getElementById('inp').style.display = "none";
+            document.getElementById('login').style.display = "none";
+            document.getElementById('reg').style.opacity = 1;
+            document.getElementById('inpr').style.opacity = 1;
+        }, 500);
+    }
+
+    function log(){
+        document.getElementById('kadi').value = "";
+        document.getElementById('pass').value = "";
+        document.getElementById('inpr').style.opacity = 0;
+        document.getElementById('reg').style.opacity = 0;
+        setTimeout(function (){
+            document.getElementById('con').style.height = "400px";
+            document.getElementById('inp').style.display = "block";
+            document.getElementById('login').style.display = "block";
+            document.getElementById('reg').style.display = "none";
+            document.getElementById('inpr').style.display = "none";
+        }, 500);
+        setTimeout(function (){
+            document.getElementById('inp').style.opacity = 1;
+            document.getElementById('login').style.opacity = 1;
+        }, 1000);
+    }
+</script>
+</html>
